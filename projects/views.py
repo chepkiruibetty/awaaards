@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.urls import reverse_lazy
-from .forms import PostForm,ProfileForm
+from .forms import PostForm,ProfileForm,UserRegisterForm
+from django.views import generic
 from .models import *
+from django.db.models import Avg
+
 
 # Create your views here.
 
@@ -17,25 +20,30 @@ class PostDetailView(DetailView):
     template_name = 'post_detail.html'
 
     
-# def profile(request):
-#     current_user = request.user
-#     profile = Profile.objects.filter(user=current_user).first()
-#     posts = request.user.post_set.all()
+class SignUpView(generic.CreateView):
+    form_class = UserRegisterForm
+    success_url = reverse_lazy('login')
+    template_name = 'registration/signup.html'
 
-#     return render(request, 'projects/profile.html', locals())
+def profile(request):
+    current_user = request.user
+    profile = Profile.objects.filter(user=current_user).first()
+    posts = request.user.post_set.all()
 
-# def updateprofile(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = ProfileForm(request.POST,request.FILES)
-#         if form.is_valid():
-#             add = form.save(commit=False)
-#             add.user = current_user
-#             add.save()
-#             return redirect('profile')
-#     else:
-#         form = ProfileForm()
-#     return render(request, 'projects/profile_update.html',{"form":form })
+    return render(request, 'projects/profile.html', locals())
+
+def updateprofile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            add = form.save(commit=False)
+            add.user = current_user
+            add.save()
+            return redirect('profile')
+    else:
+        form = ProfileForm()
+    return render(request, 'projects/profile_update.html',{"form":form })
 
 
 def post_new(request):
@@ -63,8 +71,4 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'projects/search.html',{"message":message})
-
-
-
-
 
