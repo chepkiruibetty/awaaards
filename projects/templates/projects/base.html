@@ -1,5 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -10,9 +11,11 @@
     <script src="https://kit.fontawesome.com/cf89a32663.js" crossorigin="anonymous"></script>
     {%if title%}
     <title>{{title}}</title>
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+  <style>
+  </style>
     {%endif%}
     {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 </head>
 
