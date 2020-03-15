@@ -1,5 +1,51 @@
 {% extends 'projects/base.html' %}
+{% load static%}
+{% block styles %}
+{% endblock%}
 {% block content %}
+<div class="btn1 btn container-fluid" style="background-image: url('https://bit.ly/2WeUQ87')" style="background-repeat:no-repeat">
+    <style>
+        .btn1{
+            background-repeat: no-repeat;
+            background-size: cover;
+            height:100vh;
+        }
+        </style>
+    <div class="header" style="height: 80vh; font-family: 'Encode Sans Expanded', sans-serif;">
+        <div class="container"style="color:white;">
+            <div class="row" style="padding-top:50px;">
+                <div class="col-md-4" style="font-size: 20px;">
+                    
+                </div>
+                <div class="col-md-4"></div>
+               
+            </div>
+            <div style="text-align:center; font-size: 30px; padding-top:30px; ">
+                <p style="font-family: 'Carter One', cursive;" class="blog">WORKS!</p>
+            </div>
+            <div style="text-align:center; font-size: 15px;">
+                <p class="" style="font-family: 'Merienda', cursive;">BY <strong style="color:#49c5b6;"  class="mr-3">BettySeron</strong>FROM KENYA WITH<strong class="ml-2">7.65</strong></p>
+            </div>
+            <div style="height:230px;">
+
+            </div>
+            <div>
+                <div id="box" class="col-md-4">
+                    <button class="btn" style=" border-radius: 5em; background-color: #49c5b6; border:none; padding: 2px; width: 80px;"><a
+                            target="blank" style="color: white; text-decoration:none;" href="">Visit</a></button>
+                    <button class="btn" style="color: white; border-radius: 5em; background-color: transparent; border:1px solid #49c5b6; padding: 2px; width: 80px;">
+                        likes </button>
+                    <button class="btn" style="color: white; border-radius: 5em; background-color: transparent; border:1px solid white; padding: 2px; width: 80px;">Collect</button>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="d-flex justify-content-center flex-wrap mb-5 pt-4">
     {% for post in object_list %}
     <div class="container">
@@ -34,14 +80,13 @@
                                     <p class="card-text">{{post.desc}}</p>
                                     <div class="container">
                                         <div class="rating">
-                                            <!--elements are in reversed order, to allow "previous sibling selectors" in CSS-->
-                                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                                          <!--elements are in reversed order, to allow "previous sibling selectors" in CSS-->
+                                          <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                          <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                          <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                          <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                          <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="border-top text-center">
                                     <a href="{{post.link}}" target="_blank" class="btn btn-primary">View Live Site</a>
