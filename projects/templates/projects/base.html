@@ -17,46 +17,9 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-lg navbar-default mycolor" border: 0px;>
-                <a class="mybrand navbar-brand" href="{% url 'home' %}">Awwards</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
-                  aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="col-md-1" style="padding-top:10px;">
-                  <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
-                      <input type="text" class="form-control my-2 my-sm-0 search-input" name="post" placeholder="Search by title.." id="search">
-                  </form>
-              </div>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-                  <ul class="navbar-nav ml-auto">
-                    <div class="navbar-nav">
-                        <div class="col-md-6" style="padding-top:5px;">
-                            <a href="" style="font-size:13px; color:black; text-decoration: none;">{{ user.username }}</a>
-                        </div>
-                      {% if user.is_authenticated %}
-                      <li class="nav-item">
-                        <a class="nav-item nav-link text-black" href="{% url 'post_new' %}">Submit Your Site</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-                          aria-haspopup="true" aria-expanded="false">
-                          <i class="fas fa-user"></i> Profile </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
-                          <a class="dropdown-item" href="">My account</a>
-                          <a class="dropdown-item" href="">Log out</a>
-                        </div>
-                      </li>
-                      {% else %}
-                      <a class='btn btn-default' href="">Login</a>
-                          <a class="nav-item nav-link active" href="">Register</a>
-                      {% endif %}
-                    </div>
-                  </ul>
-                </div>
-              </nav>
-              
-    {% block content %} {%endblock%}
+    {% include "projects/navbar.html" %}
+        
+    {% block content %} <div class="container"></div>{%endblock%}
     {% block scripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% endblock %}
