@@ -8,6 +8,10 @@ verify_ssl = true
 [packages]
 django-crispy-forms = "*"
 gunicorn = "*"
+django = "==2.2.10"
+whitenoise = "*"
+django-mathfilters = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.6"
