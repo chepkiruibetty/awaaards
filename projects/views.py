@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.views.generic import ListView, DetailView
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.urls import reverse_lazy
 from .forms import PostForm,ProfileForm,UserRegisterForm
 from django.views import generic
@@ -72,3 +73,9 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'projects/search.html',{"message":message})
 
+def vote(request,post_id):
+    try:
+        post = Post.objects.get(id = post_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"projects/vote.html", {"post":post})
