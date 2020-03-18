@@ -1,5 +1,5 @@
 ## PROJECT NAME 
-**Awaards**
+**Awaaards**
 
 
 ## AUTHOR 
@@ -70,7 +70,9 @@
 * MDBootstrap
 
 
+## Codebeat
 
+- [![codebeat badge](https://codebeat.co/badges/8dbec1da-6fe1-44e2-af33-8f7d9299cecb)](https://codebeat.co/projects/github-com-chepkiruibetty-awaaards-master)
 
 
   
@@ -80,7 +82,7 @@ If you have any question or contributions, please email me at [chepkiruibetty64@
 
 
 ## live link 
-
+- 
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
