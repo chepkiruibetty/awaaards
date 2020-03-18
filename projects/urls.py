@@ -19,6 +19,7 @@ path('profile/', views.profile, name='profile'),
 path('update/profile', views.updateprofile, name='update'),
 path('post/new/', views.post_new, name='post_new'),
 path('search/', views.search_results, name='search_results'),
+path('vote/(?P<post_id>\d+)?', views.vote, name='vote'), 
 
 
 ]
