@@ -12,6 +12,7 @@ django = "==2.2.10"
 whitenoise = "*"
 django-mathfilters = "*"
 pillow = "*"
+django-star-ratings = "*"
 
 [requires]
 python_version = "3.6"
