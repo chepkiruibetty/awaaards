@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'projects',
     'crispy_forms',
+    'star_ratings',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'mathfilters',
+    
 ]
 
 MIDDLEWARE = [
