@@ -3,39 +3,44 @@
 {% block styles %}
 {% endblock%}
 {% block content %}
-<div class="btn1 btn container-fluid" style="background-image: url('https://bit.ly/2WeUQ87')" style="background-repeat:no-repeat">
+<div class="btn1 btn container-fluid" style="background-image: url('https://bit.ly/2WeUQ87')"
+    style="background-repeat:no-repeat">
     <style>
-        .btn1{
+        .btn1 {
             background-repeat: no-repeat;
             background-size: cover;
-            height:100vh;
+            height: 100vh;
         }
-        </style>
+    </style>
     <div class="header" style="height: 80vh; font-family: 'Encode Sans Expanded', sans-serif;">
-        <div class="container"style="color:white;">
+        <div class="container" style="color:white;">
             <div class="row" style="padding-top:50px;">
                 <div class="col-md-4" style="font-size: 20px;">
-                    
+
                 </div>
                 <div class="col-md-4"></div>
-               
+
             </div>
             <div style="text-align:center; font-size: 30px; padding-top:30px; ">
                 <p style="font-family: 'Carter One', cursive;" class="blog">WORKS!</p>
             </div>
             <div style="text-align:center; font-size: 15px;">
-                <p class="" style="font-family: 'Merienda', cursive;">BY <strong style="color:#49c5b6;"  class="mr-3">BettySeron</strong>FROM KENYA WITH<strong class="ml-2">7.65</strong></p>
+                <p class="" style="font-family: 'Merienda', cursive;">BY <strong style="color:#49c5b6;"
+                        class="mr-3">BettySeron</strong>FROM KENYA WITH<strong class="ml-2">7.65</strong></p>
             </div>
             <div style="height:230px;">
 
             </div>
             <div>
                 <div id="box" class="col-md-4">
-                    <button class="btn" style=" border-radius: 5em; background-color: #49c5b6; border:none; padding: 2px; width: 80px;"><a
+                    <button class="btn"
+                        style=" border-radius: 5em; background-color: #49c5b6; border:none; padding: 2px; width: 80px;"><a
                             target="blank" style="color: white; text-decoration:none;" href="">Visit</a></button>
-                    <button class="btn" style="color: white; border-radius: 5em; background-color: transparent; border:1px solid #49c5b6; padding: 2px; width: 80px;">
+                    <button class="btn"
+                        style="color: white; border-radius: 5em; background-color: transparent; border:1px solid #49c5b6; padding: 2px; width: 80px;">
                         likes </button>
-                    <button class="btn" style="color: white; border-radius: 5em; background-color: transparent; border:1px solid white; padding: 2px; width: 80px;">Collect</button>
+                    <button class="btn"
+                        style="color: white; border-radius: 5em; background-color: transparent; border:1px solid white; padding: 2px; width: 80px;">Collect</button>
                 </div>
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
@@ -45,59 +50,42 @@
         </div>
     </div>
 </div>
-
-<div class="d-flex justify-content-center flex-wrap mb-5 pt-4">
-    {% for post in object_list %}
-    <div class="container">
+<div class="container-fluid display m-5">
         <div class="row">
-            <div class="col-md-5 m-3">
-                <div class="card shadow" style="width: 300px;">
-                    <img src="{{post.image.url}}" alt="" width="300px" height="300px" id="images">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ post.title }}</h5>
-                        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-                        <p class="card-text">{{post.desc}}</p>
-                        <p class="card-text">{{post.post_date}}</p>
+        {% for post in object_list %}
+        <div class="col-sm-12 col-md-6 col-lg-3 ">
+        <a href="#" data-toggle="modal" data-target="#mymodal-{{post.id}}"><img src="{{post.image.url}}" alt=""
+                width="300px" height="300px" id="images"></a>
+
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true"
+            id="mymodal-{{post.id}}">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{post.title}}</h5> <br>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModal{{ forloop.counter }}">
-                        View Project
-                    </button>
-                    <div class="modal fade" id="exampleModal{{ forloop.counter }}" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">{{ post.title }}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <img src="{{post.image}}" alt="" width="300px" height="300px" id="images">
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text">{{post.desc}}</p>
-                                    <div class="container">
-                                        <div class="rating">
-                                          <!--elements are in reversed order, to allow "previous sibling selectors" in CSS-->
-                                          <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                                          <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
-                                          <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                                          <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                                          <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                                        </div>
-                                </div>
-                                <div class="border-top text-center">
-                                    <a href="{{post.link}}" target="_blank" class="btn btn-primary">View Live Site</a>
-                                </div>
-                            </div>
+                    <div class="modal-body">
+                        <p>{{post.desc}}</p>
+                        <img src="{{post.image.url}}" alt="" width="450" height="450">
+                    </div>
+                    <div class="modal-footer w-100">
+                        <div class="copy-text d-flex  flex-wrap justify-content-center w-100">
+                            <a href="{{post.link}}" target="_blank" class="btn btn-primary">View Live Site</a>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        
+        {% endfor %}
 </div>
-{% endfor %}
+</div>
+
 {% endblock content %}
