@@ -36,9 +36,9 @@
 
 # **SETUP/INSTALLATION.**
 
-*** To view the app.Visit -> [awaaards]()
+*** To view the app.Visit -> [awaaards](https://hidden-river-54477.herokuapp.com/)
 
-1. Clone this repo: git clone https://github.com/kiprotichdominic/Rate-me.
+1. Clone this repo: git clone https://github.com/chepkiruibetty/awaaards.
 2. The repo comes in a zipped or compressed format. Extract to your prefered location and open it.
 3. open your terminal and navigate to gallery then create a virtual environment.For detailed guide refer  [here](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/)
 3. To run the app, you'll have to run the following commands in your terminal
@@ -61,6 +61,9 @@
        python manage.py runserver
 7. Use the navigation bar/navbar/navigation pane/menu to navigate and explore the app.
 
+# Database diagram
+
+- <img src="Awwards.png">
 
 # Technologies Used
 
@@ -82,7 +85,7 @@ If you have any question or contributions, please email me at [chepkiruibetty64@
 
 
 ## live link 
-- 
+- https://hidden-river-54477.herokuapp.com/
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
